@@ -9,10 +9,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="app_main")
      */
     public function mainAction()
     {
+
+        return $this->render('main/main.html.twig');
 
     }
 }
