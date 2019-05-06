@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}AppBundle:Field:add{% endblock %}
+
+{% block body %}
+
+
+<h1>Add field</h1>
+
+    {{ form_start(field_form) }}
+
+    {{ form_widget(field_form) }}
+
+    {{ form_end(field_form) }}
+
+{% endblock %}

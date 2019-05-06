@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
+
+</head>
+<body>
+<br/>
+<div class="container">
+
+    {% block header %}
+
+        <a href="{{ path('app_field_list') }}" class="btn btn-success">Fields list</a>
+        <a href="{{ path('app_tractor_list') }}" class="btn btn-success">Tractors list</a>
+        <a href="{{ path('app_field_processed_list') }}" class="btn btn-success">Processed fields list</a>
+        <a href="{{ path('app_report_list') }}" class="btn btn-success">Reports list</a>
+        <hr/>
+    {% endblock %}
+
+    {% for msg in app.session.flashBag.get('success') %}
+        <div class="alert alert-success">
+            {{ msg }}
+        </div>
+    {% endfor %}
+
+    {% block body %}{% endblock %}
+
+    {% block javascripts %}
+
+        <script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+
+        {# Some jquery here #}
+        <script>
+            $(document).ready(function(){
+
+            });
+        </script>
+
+    {% endblock %}
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}AppBundle:Tractory:add{% endblock %}
+
+{% block body %}
+
+
+<h1>Add tractor</h1>
+
+    {{ form_start(tractor_form) }}
+
+    {{ form_widget(tractor_form) }}
+
+    {{ form_end(tractor_form) }}
+
+
+
+{% endblock %}

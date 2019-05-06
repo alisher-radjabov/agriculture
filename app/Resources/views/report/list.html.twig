@@ -1,0 +1,50 @@
+{% extends "base.html.twig" %}
+
+{% block title %}AppBundle:Report:list{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-10">
+            <h1>Report list</h1>
+        </div>
+        <div class="col-md-2">
+            <a href="{{ path('app_report_add') }}" class="btn btn-primary">Add report</a>
+        </div>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>Field name</th>
+            <th>Culture</th>
+            <th>Date</th>
+            <th>Name of the tractor</th>
+            <th>Processed area</th>
+        </tr>
+
+        {% for report in reports %}
+            <tr>
+                <td>
+                    {{ report.fieldId }}
+                </td>
+                <td>
+                    {{ report.culture }}
+                </td>
+                <td>
+                    {{ report.date|date('Y-m-d') }}
+                </td>
+                <td>
+                    {{ report.tractorId }}
+                </td>
+                <td>
+                    {{ report.area }}
+                </td>
+
+            </tr>
+        {% endfor %}
+    </table>
+
+
+
+
+{% endblock %}

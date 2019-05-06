@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+{% block title %}AppBundle:Field:index{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-10">
+            <h1>Fields list</h1>
+        </div>
+        <div class="col-md-2">
+            <a href="{{ path('app_field_add') }}" class="btn btn-primary">Add field</a>
+        </div>
+    </div>
+
+
+    <table class="table">
+        <tr>
+            <th>Field name</th>
+            <th>Crop type</th>
+            <th>Area</th>
+        </tr>
+        {% for field in fields %}
+            <tr>
+                <td>
+                    {{ field.fieldName }}
+                </td>
+                <td>
+                    {{ field.cropType }}
+                </td>
+                <td>
+                    {{ field.area }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

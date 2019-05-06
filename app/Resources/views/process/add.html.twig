@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}AppBundle:Field:add{% endblock %}
+
+{% block body %}
+
+
+<h1>Process field</h1>
+
+    {{ form_start(process_field_form) }}
+
+    {{ form_widget(process_field_form) }}
+
+    {{ form_end(process_field_form) }}
+
+{% endblock %}

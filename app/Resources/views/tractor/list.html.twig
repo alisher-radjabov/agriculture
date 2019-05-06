@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block title %}AppBundle:Tractor:list{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-10">
+            <h1>Tractors list</h1>
+        </div>
+        <div class="col-md-2">
+            <a href="{{ path('app_tractor_add') }}" class="btn btn-primary">Add tractor</a>
+        </div>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>Tractor name</th>
+        </tr>
+        {% for tractor in tractors %}
+            <tr>
+                <td>
+                    {{ tractor.name }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+
+{% endblock %}

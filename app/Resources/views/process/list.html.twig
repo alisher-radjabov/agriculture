@@ -1,0 +1,49 @@
+{% extends "base.html.twig" %}
+
+{% block title %}AppBundle:Field:process{% endblock %}
+
+{% block body %}
+
+
+
+
+    <div class="row">
+        <div class="col-md-10">
+            <h1>Processed fields list</h1>
+        </div>
+        <div class="col-md-2">
+            <a href="{{ path('app_field_processed_add') }}" class="btn btn-primary">Process field</a>
+        </div>
+    </div>
+
+
+    <table class="table">
+        <tr>
+            <th>Tractor name</th>
+            <th>Field name</th>
+            <th>Area</th>
+            <th>Process date</th>
+        </tr>
+
+        {% for process in processed %}
+            <tr>
+                <td>
+                    {{ process.tractorId }}
+                </td>
+                <td>
+                    {{ process.fieldId }}
+                </td>
+                <td>
+                    {{ process.areaId }}
+                </td>
+                <td>
+                    {{ process.processDate|date('Y-m-d') }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+
+
+
+{% endblock %}

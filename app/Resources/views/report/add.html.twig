@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}AppBundle:Report:add{% endblock %}
+
+{% block body %}
+
+
+<h1>Report</h1>
+
+    {{ form_start(report_form) }}
+
+    {{ form_widget(report_form) }}
+
+    {{ form_end(report_form) }}
+
+{% endblock %}
